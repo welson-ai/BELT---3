@@ -74,8 +74,11 @@ export default function Dashboard({ wallet, onDisconnect }) {
         ) : (
           <>
             <div className="balance-display">
-              <span className="balance-amount">{formatXLM(account?.xlmBalance)}</span>
-              <span className="balance-unit">XLM</span>
+              <div className="balance-label">Total Balance</div>
+              <div className="balance-row">
+                <span className="balance-amount">{formatXLM(account?.xlmBalance)}</span>
+                <span className="balance-unit">XLM</span>
+              </div>
             </div>
             <div className="account-actions">
               <button className="fund-btn small" onClick={handleFriendbot} disabled={funding}>
