@@ -2,7 +2,7 @@
 
 A modern, feature-rich Stellar wallet decentralized application with a premium Phantom/Coinbase-style interface. Built with React, Vite, and the Stellar SDK for seamless blockchain interactions on the Stellar Testnet.
 
-## 🌟 Features
+## Features
 
 - **Wallet Management**: Create new wallets or import existing ones using secret keys
 - **XLM Transactions**: Send and receive Stellar Lumen (XLM) transactions
@@ -12,7 +12,7 @@ A modern, feature-rich Stellar wallet decentralized application with a premium P
 - **Responsive Design**: Optimized for both desktop and mobile devices
 - **Real-time Updates**: Live balance updates and transaction status tracking
 
-## 🏗️ System Architecture
+## System Architecture
 
 ### Frontend Architecture
 ```
@@ -46,7 +46,7 @@ A modern, feature-rich Stellar wallet decentralized application with a premium P
 4. **Balance Updates**: Fetches real-time account data from Stellar network
 5. **History Tracking**: Retrieves and displays transaction history
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 stellar-wallet-dapp/
@@ -74,7 +74,7 @@ stellar-wallet-dapp/
 └── README.md                   # This file
 ```
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend
 - **React 18** - Modern UI library with hooks
@@ -96,7 +96,7 @@ stellar-wallet-dapp/
 - **ESLint** - Code linting and formatting
 - **Google Fonts** - Inter and JetBrains Mono typography
 
-## 🔧 Key Components
+## Key Components
 
 ### Stellar Utilities (`src/utils/stellar.js`)
 Core blockchain interaction layer providing:
@@ -126,7 +126,7 @@ Transaction interface with:
 - **Memo Support**: Optional transaction memos
 - **Success Handling**: Transaction confirmation and explorer links
 
-## 🧪 Testing
+## Testing
 
 Comprehensive test suite covering:
 - **Keypair Generation**: Validation of keypair creation and restoration
@@ -140,7 +140,7 @@ npm test                # Run all tests
 npm run test:watch     # Run tests in watch mode
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 16+ and npm
@@ -172,7 +172,7 @@ npm run dev
 - `npm test` - Run test suite
 - `npm run test:watch` - Run tests in watch mode
 
-## 🌐 Network Configuration
+## Network Configuration
 
 ### Stellar Testnet
 The application runs on the Stellar Testnet, providing:
@@ -185,7 +185,7 @@ The application runs on the Stellar Testnet, providing:
 - **Friendbot**: https://friendbot.stellar.org
 - **Explorer**: https://stellar.expert/explorer/testnet
 
-## 🔒 Security Considerations
+## Security Considerations
 
 ### Key Management
 - **Client-side**: Private keys never leave the user's browser
@@ -197,7 +197,7 @@ The application runs on the Stellar Testnet, providing:
 - **Education Focus**: Teaches users about secure key management
 - **Warning Systems**: Clear warnings about secret key security
 
-## 🎨 UI/UX Design
+## UI/UX Design
 
 ### Design System
 - **Dark Theme**: Professional dark color palette with indigo/purple accents
@@ -212,7 +212,7 @@ The application runs on the Stellar Testnet, providing:
 - **Interactive States**: Hover effects and loading animations
 - **Accessibility**: Semantic HTML and keyboard navigation
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 ### Planned Features
 - **Mainnet Support**: Optional mainnet deployment
@@ -227,11 +227,11 @@ The application runs on the Stellar Testnet, providing:
 - **Offline Support**: Service worker for offline functionality
 - **Performance**: Code splitting and lazy loading
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -241,7 +241,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📞 Support
+## Support
 
 For questions, suggestions, or issues:
 - Create an issue on GitHub
@@ -250,4 +250,4 @@ For questions, suggestions, or issues:
 
 ---
 
-**Built with ❤️ for the Stellar ecosystem**
+**Built with love for the Stellar ecosystem**
