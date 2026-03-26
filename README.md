@@ -2,17 +2,17 @@
 
 ## Project Showcase
 
-### Title Submission Requirements
-[Title submission requirements will be added here]
+### Submission Requirements
+
 
 ### Live Demo
-[Live deployment link will be added here]
+https://stellarpay-eta.vercel.app/
 
 ### Pitch Video
 [Pitch video link will be added here]
 
 ### Test Results
-![Test Results](public/image.png)
+![App Screenshot](https://raw.githubusercontent.com/welson-ai/BELT---3/main/public/image.png)
 
 ---
 
