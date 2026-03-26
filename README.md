@@ -1,5 +1,21 @@
 # StellarPay - Premium Stellar Wallet dApp
 
+## Project Showcase
+
+### Title Submission Requirements
+[Title submission requirements will be added here]
+
+### Live Demo
+[Live deployment link will be added here]
+
+### Pitch Video
+[Pitch video link will be added here]
+
+### Test Results
+![Test Results](public/image.png)
+
+---
+
 A modern, feature-rich Stellar wallet decentralized application with a premium Phantom/Coinbase-style interface. Built with React, Vite, and the Stellar SDK for seamless blockchain interactions on the Stellar Testnet.
 
 ## Features
