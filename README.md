@@ -9,7 +9,7 @@
 https://stellarpay-eta.vercel.app/
 
 ### Pitch Video
-[Pitch video link will be added here]
+https://www.veed.io/view/81316d35-19e5-4715-9ca7-9fde1845e327?source=Homepage&panel=share
 
 ### Test Results
 ![App Screenshot](https://raw.githubusercontent.com/welson-ai/BELT---3/main/public/image.png)
