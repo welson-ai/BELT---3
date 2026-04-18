@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { getAccountDetails, fundWithFriendbot, getRecentTransactions, formatAddress, formatXLM } from '../utils/stellar';
 import SendPanel from './SendPanel';
 import TransactionList from './TransactionList';
+import ContractDeploy from './ContractDeploy';
+import ContractInteract from './ContractInteract';
 
 export default function Dashboard({ wallet, onDisconnect }) {
   const [account, setAccount] = useState(null);
@@ -13,6 +15,8 @@ export default function Dashboard({ wallet, onDisconnect }) {
   const [activeTab, setActiveTab] = useState('overview');
   const [copied, setCopied] = useState(false);
   const [notFound, setNotFound] = useState(false);
+  const [deployedContracts, setDeployedContracts] = useState([]);
+  const [contractsSubTab, setContractsSubTab] = useState('deploy');
 
   const loadAccount = useCallback(async () => {
     setLoading(true); setError(''); setNotFound(false);
@@ -27,16 +31,20 @@ export default function Dashboard({ wallet, onDisconnect }) {
 
   useEffect(() => { loadAccount(); }, [loadAccount]);
 
-  async function handleFriendbot() {
+  const handleFriendbot = async () => {
     setFunding(true); setFundMsg('');
     try {
-      await fundWithFriendbot(wallet.publicKey);
-      setFundMsg('✓ Funded with 10,000 XLM!');
-      await loadAccount();
+      const msg = await fundWithFriendbot(wallet.publicKey);
+      setFundMsg(msg);
+      loadAccount();
     } catch (err) {
-      setFundMsg('⚠ ' + (err.message || 'Funding failed.'));
+      setFundMsg('Funding failed. Try again.');
     } finally { setFunding(false); }
-  }
+  };
+
+  const handleContractDeployed = (contractInfo) => {
+    setDeployedContracts(prev => [...prev, contractInfo]);
+  };
 
   function handleCopy() {
     navigator.clipboard.writeText(wallet.publicKey);
@@ -95,7 +103,7 @@ export default function Dashboard({ wallet, onDisconnect }) {
       {!notFound && !loading && (
         <>
           <div className="tab-bar">
-            {['overview','send','history'].map(tab => (
+            {['overview','send','contracts','history'].map(tab => (
               <button key={tab} className={`tab-btn ${activeTab === tab ? 'active' : ''}`} onClick={() => setActiveTab(tab)}>
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </button>
@@ -119,6 +127,20 @@ export default function Dashboard({ wallet, onDisconnect }) {
               </div>
             )}
             {activeTab === 'send' && <SendPanel wallet={wallet} onSent={loadAccount} />}
+            {activeTab === 'contracts' && (
+              <div className="contracts-panel">
+                <div className="contracts-tabs">
+                  <button className={`contracts-tab-btn ${contractsSubTab === 'deploy' ? 'active' : ''}`} onClick={() => setContractsSubTab('deploy')}>
+                    Deploy Contract
+                  </button>
+                  <button className={`contracts-tab-btn ${contractsSubTab === 'interact' ? 'active' : ''}`} onClick={() => setContractsSubTab('interact')}>
+                    Interact
+                  </button>
+                </div>
+                {contractsSubTab === 'deploy' && <ContractDeploy wallet={wallet} onContractDeployed={handleContractDeployed} />}
+                {contractsSubTab === 'interact' && <ContractInteract wallet={wallet} deployedContracts={deployedContracts} />}
+              </div>
+            )}
             {activeTab === 'history' && <TransactionList transactions={transactions} publicKey={wallet.publicKey} />}
           </div>
         </>
